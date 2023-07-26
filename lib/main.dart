@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     return AppProvider(
       child: LayoutBuilder(builder: (context, constraint) {
         return MaterialApp.router(
-          title: 'JobFree',
+          title: 'test',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
               primarySwatch: Colors.blue,
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: const Text(
-          "JobFree",
+          "test",
           style: TextStyle(
               color: lightGreen,
               fontSize: 24,
