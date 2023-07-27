@@ -110,10 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24),
             child: CircleAvatar(
-              radius: 20,
+              radius: 30,
               backgroundColor: paleGrey,
-              backgroundImage:
-                  NetworkImage("https://i.ibb.co/qLSDDvK/person-1.png"),
+              backgroundImage: AssetImage('img/logo.png'),
             ),
           )
         ],
