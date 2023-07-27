@@ -32,7 +32,7 @@ class HomeLocation extends BeamLocation<BeamState> {
       if (!context.isLargeScreen && state.pathParameters.containsKey('id'))
         BeamPage(
           key: ValueKey('job-${job!.id}'),
-          title: "${job.company.name} - ${job.role}",
+          title: "${job.company.name} - ${job.title}",
           name: '/:id',
           child: JobDetailWidget(
             model: job,
@@ -61,7 +61,7 @@ class InnerJobLocation extends BeamLocation<BeamState> {
       if (state.pathParameters.containsKey('id'))
         BeamPage(
           key: ValueKey('job-${job.id}'),
-          title: "${job.company.name} - ${job.role}",
+          title: "${job.company.name} - ${job.title}",
           name: '/:id',
           child: JobDetailWidget(
             model: job,
@@ -70,7 +70,7 @@ class InnerJobLocation extends BeamLocation<BeamState> {
       else
         BeamPage(
           key: ValueKey('job-${job.id}'),
-          title: "${job.company.name} - ${job.role}",
+          title: "${job.company.name} - ${job.title}",
           name: '/0',
           child: JobDetailWidget(
             model: job,

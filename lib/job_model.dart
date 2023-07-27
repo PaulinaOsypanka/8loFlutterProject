@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class JobModel {
   JobModel({
     required this.id,
-    required this.role,
+    required this.title,
     required this.type,
     required this.position,
     required this.description,
@@ -15,7 +15,7 @@ class JobModel {
   });
 
   final int id;
-  final String role;
+  final String title;
   final String type;
   final String position;
   final String description;
@@ -30,7 +30,7 @@ class JobModel {
 
     return other is JobModel &&
         other.id == id &&
-        other.role == role &&
+        other.title == title &&
         other.type == type &&
         other.position == position &&
         other.description == description &&
@@ -42,7 +42,7 @@ class JobModel {
 
   @override
   int get hashCode {
-    return role.hashCode ^
+    return title.hashCode ^
         id.hashCode ^
         type.hashCode ^
         position.hashCode ^

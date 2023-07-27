@@ -18,7 +18,7 @@ class JobDetailWidget extends StatelessWidget {
           ? null
           : AppBar(
               title: Text(
-                model.role,
+                model.title,
               ),
             ),
       body: SingleChildScrollView(
@@ -94,7 +94,7 @@ class _CompanyInfoWidget extends StatelessWidget {
               children: [
                 const SizedBox(height: 36),
                 Text(
-                  "${model.role}\n",
+                  "${model.title}\n",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,

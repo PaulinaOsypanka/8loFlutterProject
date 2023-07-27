@@ -84,7 +84,7 @@ class JobCard extends StatelessWidget {
                           children: [
                             Flexible(
                               child: Text(
-                                model.role,
+                                model.title,
                                 style: textTheme.headline6,
                               ),
                             ),
@@ -116,7 +116,7 @@ class JobCard extends StatelessWidget {
                           runSpacing: 4.0,
                           spacing: 4.0,
                           children: [
-                            _buildChip(context, model.role,
+                            _buildChip(context, model.title,
                                 color: Colors.grey[200]),
                             _buildChip(context, model.type,
                                 color: Colors.grey[200])

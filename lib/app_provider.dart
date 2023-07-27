@@ -14,28 +14,31 @@ class AppProvider extends InheritedWidget {
   final jobs = [
     JobModel(
       id: 0,
-      role: "Product Designer",
+      title: "Certyfikat “Szkoły odpowiedzialnej cyfrowo”",
       type: "Full-time",
       position: "Entry-Level",
       description: """
-""",
+W tym roku szkolnym nasza szkoła przystąpiła do programu Szkoła Odpowiedzialna Cyfrowo. Jest to projekt badawczy dotyczący poczucia własnej wartości i sprawczości, który powstał z inicjatywy Fundacji UNAWEZA założonej przez Martynę Wojciechowską we współpracy z Fundacją Dbam o Mój Z@sięg.
+Badanie było wielowymiarowe i miało na celu globalne spojrzenie na kondycję psychiczną młodzieży w Polsce. Na kogo młodzi ludzie mogą liczyć w kryzysowej sytuacji? Do kogo by się zwrócili po pomoc? To próba znalezienia odpowiedzi na te pytania i pogłębienie wiedzy o faktycznych problemach psychicznych młodych ludzi. Uczestnikami badania byli uczniowie szkół podstawowych
+i ponadpodstawowych w wieku 10-19 lat zarówno z dużych miast jak i małych miejscowości z każdego krańca Polski.
+Opracowane wyniki mają posłużyć do stworzenia kompleksowej oferty edukacyjnej, z konkretnymi narzędziami dla dzieci i rodziców oraz nauczycieli.""",
       salaryRange: [120, 250],
       salaryInterval: "Month",
-      postedDate: "24hr",
+      postedDate: "Aktualności",
       company: Company(
         icon: FontAwesomeIcons.google,
-        location: 'California',
-        name: 'Google',
+        location: 'Dorota Szafraniec',
+        name: '5 czerwca 2023',
         backgroundColor: Colors.orange[300],
       ),
     ),
     JobModel(
       id: 1,
-      role: "IOS Developer",
+      title: "IOS Developer",
       type: "Full-time",
       position: "Mid-Senior Level",
       description: """
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""",
+""",
       salaryRange: [150, 200],
       salaryInterval: "Month",
       postedDate: "1hr",
@@ -48,7 +51,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     ),
     JobModel(
       id: 2,
-      role: "Flutter Mobile Developer",
+      title: "Flutter Mobile Developer",
       type: "Contract",
       position: "Senior-Level",
       description: """
@@ -65,7 +68,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     ),
     JobModel(
       id: 3,
-      role: "Technical Product Manager",
+      title: "Technical Product Manager",
       type: "Full-time",
       position: "Senior-Level",
       description: """
@@ -82,7 +85,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     ),
     JobModel(
       id: 4,
-      role: "Aws Engineer",
+      title: "Aws Engineer",
       type: "Contract",
       position: "Entry-Level",
       description: """
