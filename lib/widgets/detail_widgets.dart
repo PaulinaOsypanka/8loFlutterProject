@@ -28,7 +28,6 @@ class JobDetailWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             _CompanyInfoWidget(model: model),
-            _JobBenefitWidget(model: model),
             Padding(
               padding: const EdgeInsets.all(24).copyWith(top: 35),
               child: Text(
@@ -41,21 +40,6 @@ class JobDetailWidget extends StatelessWidget {
               child: Text(
                 model.description,
                 style: textTheme.bodyText2,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 36),
-              child: TextButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black),
-                  minimumSize:
-                      MaterialStateProperty.all(const Size.fromHeight(50)),
-                ),
-                child: const Text(
-                  "Apply Now",
-                  style: TextStyle(color: Colors.white),
-                ),
               ),
             )
           ],
@@ -124,72 +108,6 @@ class _CompanyInfoWidget extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class _JobBenefitWidget extends StatelessWidget {
-  const _JobBenefitWidget({
-    Key? key,
-    required this.model,
-  }) : super(key: key);
-
-  final JobModel model;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _buildBenefit(
-            context,
-            benefitCaption: "Salary",
-            benefit: "\$${model.salaryRange[0]} - ${model.salaryRange[1]}K",
-            color: paleGold,
-            iconData: Icons.monetization_on_outlined,
-          ),
-          _buildBenefit(
-            context,
-            benefitCaption: "Job Type",
-            benefit: model.type,
-            color: palePurple,
-            iconData: Icons.access_alarm_outlined,
-          ),
-          _buildBenefit(
-            context,
-            benefitCaption: "Position",
-            benefit: model.position,
-            color: paleBlue,
-            iconData: Icons.accessibility_outlined,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBenefit(
-    BuildContext context, {
-    required String benefitCaption,
-    required String benefit,
-    required Color color,
-    required IconData iconData,
-  }) {
-    final textTheme = Theme.of(context).textTheme;
-
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 20,
-          backgroundColor: color,
-          child: Icon(iconData, size: 20, color: Colors.black87),
-        ),
-        const SizedBox(height: 12),
-        Text(benefitCaption, style: textTheme.bodyText2),
-        const SizedBox(height: 4),
-        Text(benefit, style: textTheme.bodyText1!.copyWith(fontSize: 12)),
-      ],
     );
   }
 }

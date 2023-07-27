@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:pwa_demo/extensions.dart';
 import 'package:pwa_demo/widgets/job_list.dart';
+import 'dart:html' as html;
 
 import '/app_provider.dart';
 import '/beamer_locations.dart';
@@ -106,15 +107,19 @@ class _MyHomePageState extends State<MyHomePage> {
               letterSpacing: 5,
               fontWeight: FontWeight.bold),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24),
-            child: CircleAvatar(
-              radius: 30,
-              backgroundColor: paleGrey,
-              backgroundImage: AssetImage('img/logo.png'),
-            ),
-          )
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: GestureDetector(
+                onTap: () {
+                  html.window.open('https://linktr.ee/su8lokrakow', 'linktree');
+                },
+                child: const CircleAvatar(
+                  radius: 30,
+                  backgroundColor: paleGrey,
+                  backgroundImage: AssetImage('img/logo.png'),
+                ),
+              ))
         ],
         centerTitle: false,
         backgroundColor: Colors.white,
