@@ -3,7 +3,6 @@ import 'package:pwa_demo/colors.dart';
 import 'package:pwa_demo/extensions.dart';
 import 'package:pwa_demo/job_model.dart';
 
-
 class JobDetailWidget extends StatelessWidget {
   const JobDetailWidget({Key? key, required this.model}) : super(key: key);
 
@@ -21,27 +20,30 @@ class JobDetailWidget extends StatelessWidget {
               ),
             ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _CompanyInfoWidget(model: model),
-            Padding(
-              padding: const EdgeInsets.all(24).copyWith(top: 35),
-              child: Text(
-                "Description",
-                style: textTheme.headline6,
+        child: Container(
+          color: const Color(0xFF121212),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _CompanyInfoWidget(model: model),
+              Padding(
+                padding: const EdgeInsets.all(24).copyWith(top: 35),
+                child: Text(
+                  "Description",
+                  style: textTheme.headline6,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Text(
-                model.description,
-                style: textTheme.bodyText2,
-              ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Text(
+                  model.description,
+                  style: textTheme.bodyText2,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
           title: 'Aktualności 8lo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-              primarySwatch: Colors.blue,
+              primarySwatch: MaterialColorGenerator.from( const Color.fromARGB(255, 15, 15, 15)),
               chipTheme: const ChipThemeData(
                   labelStyle: TextStyle(
                 fontSize: 11,
@@ -73,7 +73,22 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
+class MaterialColorGenerator{
+  static MaterialColor from(Color color) {
+    return MaterialColor(color.value, <int, Color>{
+      50: color.withOpacity(0.1),
+      100: color.withOpacity(0.2),
+      200: color.withOpacity(0.3),
+      300: color.withOpacity(0.4),
+      400: color.withOpacity(0.5),
+      500: color.withOpacity(0.6),
+      600: color.withOpacity(0.7),
+      700: color.withOpacity(0.8),
+      800: color.withOpacity(0.9),
+      900: color.withOpacity(1.0),
+    });
+  }
+}
 /// Design inspired by this deisgn https://dribbble.com/shots/17092342-Job-Finder-App
 class MyHomePage extends StatefulWidget {
   const MyHomePage({

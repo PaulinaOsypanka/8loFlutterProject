@@ -28,7 +28,7 @@ Opracowane wyniki mają posłużyć do stworzenia kompleksowej oferty edukacyjne
       company: Company(
         location: 'Dorota Szafraniec',
         name: '5 czerwca 2023',
-        backgroundColor: Colors.orange[300],
+        backgroundColor: const Color.fromARGB(255, 80, 80, 80),
       ),
     ),
     JobModel(
@@ -44,7 +44,7 @@ Opracowane wyniki mają posłużyć do stworzenia kompleksowej oferty edukacyjne
       company: Company(
         location: 'California',
         name: 'Apple',
-        backgroundColor: Colors.grey[350],
+        backgroundColor: const Color.fromARGB(255, 80, 80, 80),
       ),
     ),
     JobModel(
@@ -60,7 +60,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
       company: Company(
         location: 'Canada',
         name: 'Google',
-        backgroundColor: Colors.orange[300],
+        backgroundColor: const Color.fromARGB(255, 80, 80, 80),
       ),
     ),
     JobModel(
@@ -73,10 +73,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
       salaryRange: [250, 300],
       salaryInterval: "Month",
       postedDate: "30days",
-      company: Company(
+      company: Company (
         location: 'Sweden',
         name: 'Facebook',
-        backgroundColor: paleBlue,
+        backgroundColor: const Color.fromARGB(255, 80, 80, 80),
       ),
     ),
     JobModel(
@@ -92,7 +92,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
       company: Company(
         location: 'Germany',
         name: 'Amazon',
-        backgroundColor: Colors.deepPurple[300],
+        backgroundColor: const Color.fromARGB(255, 80, 80, 80),
       ),
     ),
   ];
