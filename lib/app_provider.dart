@@ -15,7 +15,7 @@ class AppProvider extends InheritedWidget {
     JobModel(
       id: 0,
       title: "Certyfikat “Szkoły odpowiedzialnej cyfrowo”",
-      type: "Full-time",
+      type: "Aktualności",
       position: "Entry-Level",
       description: """
 W tym roku szkolnym nasza szkoła przystąpiła do programu Szkoła Odpowiedzialna Cyfrowo. Jest to projekt badawczy dotyczący poczucia własnej wartości i sprawczości, który powstał z inicjatywy Fundacji UNAWEZA założonej przez Martynę Wojciechowską we współpracy z Fundacją Dbam o Mój Z@sięg.

@@ -89,49 +89,11 @@ class JobCard extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 4),
-                            Text(
-                              "\$${model.salaryRange[0]} - ${model.salaryRange[1]}K/${model.salaryInterval}",
-                              style: textTheme.bodyText2!,
-                            ),
                           ],
-                        ),
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.topRight,
-                            child: Icon(
-                              Icons.favorite_outline,
-                              color: Colors.grey[300],
-                            ),
-                          ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Wrap(
-                          runSpacing: 4.0,
-                          spacing: 4.0,
-                          children: [
-                            _buildChip(context, model.title,
-                                color: Colors.grey[200]),
-                            _buildChip(context, model.type,
-                                color: Colors.grey[200])
-                          ],
-                        ),
-                      ),
-                      _buildChip(
-                        context,
-                        "Apply",
-                        color: paleGold,
-                        horizontalPad: 12,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ],
-                  )
                 ],
               ),
             );
