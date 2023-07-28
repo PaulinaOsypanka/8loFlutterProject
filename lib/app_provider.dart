@@ -26,7 +26,6 @@ Opracowane wyniki mają posłużyć do stworzenia kompleksowej oferty edukacyjne
       salaryInterval: "Month",
       postedDate: "Aktualności",
       company: Company(
-        icon: FontAwesomeIcons.google,
         location: 'Dorota Szafraniec',
         name: '5 czerwca 2023',
         backgroundColor: Colors.orange[300],
@@ -43,7 +42,6 @@ Opracowane wyniki mają posłużyć do stworzenia kompleksowej oferty edukacyjne
       salaryInterval: "Month",
       postedDate: "1hr",
       company: Company(
-        icon: Icons.apple,
         location: 'California',
         name: 'Apple',
         backgroundColor: Colors.grey[350],
@@ -60,7 +58,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
       salaryInterval: "Hour",
       postedDate: "2Wks",
       company: Company(
-        icon: FontAwesomeIcons.google,
         location: 'Canada',
         name: 'Google',
         backgroundColor: Colors.orange[300],
@@ -77,7 +74,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
       salaryInterval: "Month",
       postedDate: "30days",
       company: Company(
-        icon: FontAwesomeIcons.facebook,
         location: 'Sweden',
         name: 'Facebook',
         backgroundColor: paleBlue,
@@ -94,7 +90,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
       salaryInterval: "Month",
       postedDate: "30days",
       company: Company(
-        icon: FontAwesomeIcons.amazon,
         location: 'Germany',
         name: 'Amazon',
         backgroundColor: Colors.deepPurple[300],

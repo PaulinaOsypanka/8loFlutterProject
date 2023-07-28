@@ -2,7 +2,6 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:pwa_demo/extensions.dart';
 import 'package:pwa_demo/job_model.dart';
-import 'package:pwa_demo/widgets/company_profile_avatar.dart';
 
 import '../colors.dart';
 
@@ -52,13 +51,13 @@ class JobCard extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(255, 29, 29, 29),
                 boxShadow: [
                   BoxShadow(
                     offset: const Offset(-3, 2),
                     spreadRadius: 1,
                     blurRadius: 3,
-                    color: Colors.grey[200]!,
+                    color: const Color.fromARGB(255, 0, 0, 0)!,
                   )
                 ],
                 borderRadius: BorderRadius.circular(7),
@@ -75,7 +74,6 @@ class JobCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        CompanyProfileAvatar(company: model.company),
                         const SizedBox(width: 16),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

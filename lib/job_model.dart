@@ -58,25 +58,20 @@ class Company {
   Company({
     required this.name,
     required this.location,
-    required this.icon,
     this.backgroundColor,
   });
 
   final String name;
   final String location;
-  final IconData icon;
   final Color? backgroundColor;
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Company &&
-        other.name == name &&
-        other.location == location &&
-        other.icon == icon;
+    return other is Company && other.name == name && other.location == location;
   }
 
   @override
-  int get hashCode => name.hashCode ^ location.hashCode ^ icon.hashCode;
+  int get hashCode => name.hashCode ^ location.hashCode;
 }

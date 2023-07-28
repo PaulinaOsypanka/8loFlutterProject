@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                 fontSize: 11,
               )),
               appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.white,
+                backgroundColor:  Color.fromARGB(255, 15, 15, 15),
                 elevation: 1.0,
                 iconTheme: IconThemeData(color: Colors.black),
                 titleTextStyle: TextStyle(
@@ -98,32 +98,36 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        title: const Text(
-          "Aktualności 8lo",
-          style: TextStyle(
-              color: lightGreen,
-              fontSize: 24,
-              letterSpacing: 5,
-              fontWeight: FontWeight.bold),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60.0),
+        child: AppBar(
+          title: const Text(
+            "Aktualności 8lo",
+            style: TextStyle(
+                color: lightGreen,
+                fontSize: 24,
+                letterSpacing: 5,
+                fontWeight: FontWeight.bold),
+          ),
+          actions: [
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: GestureDetector(
+                  onTap: () {
+                    html.window
+                        .open('https://linktr.ee/su8lokrakow', 'linktree');
+                  },
+                  child: const CircleAvatar(
+                    radius: 29,
+                    backgroundColor: const Color(0xFF121212),
+                    foregroundImage: AssetImage('img/logo.png'),
+                  ),
+                ))
+          ],
+          centerTitle: false,
+          backgroundColor: const Color(0xFF121212),
+          elevation: 1.0,
         ),
-        actions: [
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: GestureDetector(
-                onTap: () {
-                  html.window.open('https://linktr.ee/su8lokrakow', 'linktree');
-                },
-                child: const CircleAvatar(
-                  radius: 30,
-                  backgroundColor: paleGrey,
-                  backgroundImage: AssetImage('img/logo.png'),
-                ),
-              ))
-        ],
-        centerTitle: false,
-        backgroundColor: Colors.white,
-        elevation: 1.0,
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -140,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 constraints.maxWidth * (context.isExpanded ? 0.5 : 0.6);
 
             return Container(
-              color: Colors.white70,
+              color: Color.fromARGB(255, 24, 24, 24),
               margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,

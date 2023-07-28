@@ -3,7 +3,6 @@ import 'package:pwa_demo/colors.dart';
 import 'package:pwa_demo/extensions.dart';
 import 'package:pwa_demo/job_model.dart';
 
-import 'company_profile_avatar.dart';
 
 class JobDetailWidget extends StatelessWidget {
   const JobDetailWidget({Key? key, required this.model}) : super(key: key);
@@ -99,13 +98,6 @@ class _CompanyInfoWidget extends StatelessWidget {
               ],
             ),
           ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: CompanyProfileAvatar(
-              company: model.company,
-              radius: 40,
-            ),
-          )
         ],
       ),
     );
