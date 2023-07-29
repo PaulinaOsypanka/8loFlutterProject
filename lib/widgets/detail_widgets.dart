@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lo_news/colors.dart';
 import 'package:lo_news/extensions.dart';
 
 import '../article.dart';
@@ -38,7 +37,10 @@ class JobDetailWidget extends StatelessWidget {
                   model.content,
                   style: textTheme.bodyMedium,
                 ),
-              )
+              ),
+                const Padding(
+                padding: EdgeInsets.symmetric(vertical: 1120),
+                ),
             ],
           ),
         ),
