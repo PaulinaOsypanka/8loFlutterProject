@@ -16,7 +16,7 @@ class HomeLocation extends BeamLocation<BeamState> {
     if (BuildContextExt.jobs != null) {
       try {
         job = BuildContextExt.jobs!.firstWhere(
-            (element) => element.link == '${state.uri.path.substring(1)}/');
+            (element) => element.id.toString() == state.uri.path.substring(1));
       } catch (e) {
         log(e.toString());
       }
@@ -30,11 +30,11 @@ class HomeLocation extends BeamLocation<BeamState> {
             currentIndex: 0,
           ),
         ),
-        if (!context.isLargeScreen)
+        if (!context.isLargeScreen && state.uri.path.substring(1) != "")
           BeamPage(
-            key: ValueKey('job-${job!.link}'),
+            key: ValueKey('job-${job!.id}'),
             title: job.title,
-            name: '/:link',
+            name: '/:id',
             child: JobDetailWidget(
               model: job,
             ),
@@ -55,7 +55,7 @@ class HomeLocation extends BeamLocation<BeamState> {
   }
 
   @override
-  List<Pattern> get pathPatterns => ['/:link'];
+  List<Pattern> get pathPatterns => ['/:id'];
 }
 
 class InnerJobLocation extends BeamLocation<BeamState> {
@@ -66,15 +66,15 @@ class InnerJobLocation extends BeamLocation<BeamState> {
     if (BuildContextExt.jobs != null) {
       try {
         job = BuildContextExt.jobs!.firstWhere(
-            (element) => element.link == '${state.uri.path.substring(1)}/');
+            (element) => element.id.toString() == state.uri.path.substring(1));
       } catch (e) {
         job = BuildContextExt.jobs!.first;
       }
 
       return [
-        if (state.pathParameters.containsKey('link'))
+        if (state.pathParameters.containsKey('id'))
           BeamPage(
-            key: ValueKey('job-${job.link}'),
+            key: ValueKey('job-${job.id}'),
             title: "job.title",
             name: '/:id',
             child: JobDetailWidget(
@@ -83,7 +83,7 @@ class InnerJobLocation extends BeamLocation<BeamState> {
           )
         else
           BeamPage(
-            key: ValueKey('job-${job.link}'),
+            key: ValueKey('job-${job.id}'),
             title: job.title,
             name: '/0',
             child: JobDetailWidget(

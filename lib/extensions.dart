@@ -20,12 +20,13 @@ extension BuildContextExt on BuildContext {
   }
 
   static Article initialArticle = Article(
-      link: "link",
-      title: "title",
-      lead: "lead",
-      date: "date",
-      author: "author",
-      content: "content",
+      id: 0,
+      link: "",
+      title: "",
+      lead: "",
+      date: "",
+      author: "",
+      content: "",
       externalLinks: List.empty(),
       images: List.empty(),
       tags: List.empty());

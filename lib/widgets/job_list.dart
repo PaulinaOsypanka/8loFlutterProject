@@ -56,8 +56,8 @@ class JobCard extends StatelessWidget {
       onTap: () {
         context.isLargeScreen
             ? context.provider.childBeamerKey.currentState?.routerDelegate
-                .beamToNamed('/${model.link}')
-            : context.beamToNamed('/${model.link}');
+                .beamToNamed('/${model.id}')
+            : context.beamToNamed('/${model.id}');
       },
       child: AnimatedBuilder(
           animation: context.isLargeScreen
@@ -80,7 +80,8 @@ class JobCard extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.circular(7),
                 border: Border.all(
-                  color: _isSelected(context) ? lightYellow : Colors.transparent,
+                  color:
+                      _isSelected(context) ? lightYellow : Colors.transparent,
                 ),
               ),
               child: Column(
@@ -124,7 +125,7 @@ class JobCard extends StatelessWidget {
             ?.currentBeamLocation.state as BeamState)
         .pathParameters;
 
-    return params['link'] == model.link;
+    return params['id'] == model.id.toString();
   }
 
   Widget _buildChip(
