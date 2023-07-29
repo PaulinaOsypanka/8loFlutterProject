@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pwa_demo/app_provider.dart';
+import 'package:lo_news/app_provider.dart';
 
 extension BuildContextExt on BuildContext {
   bool get isLargeScreen {

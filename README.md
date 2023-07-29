@@ -1,14 +1,9 @@
-# pwa_demo
+# lo_news
 
-A simple responsive application that demonstrates Progressive Web App (PWA) in flutter.
-
-https://user-images.githubusercontent.com/24453401/189306113-6db77737-de8d-4eef-816c-2e2b033cd6e8.mp4
-> PWA running on IOS device and Ipad. Designed inspired by https://dribbble.com/shots/17092342-Job-Finder-App
+A simple responsive application that displays 8 LO news in flutter.
 
 
 #### Set Up
-Clone the codebase by running the command `git clone git@github.com:JasperEssien2/pwa_demo.git`.
-
 The dependencies used in this project are indicated in the table below.
 
 |Dependency|Use cases|

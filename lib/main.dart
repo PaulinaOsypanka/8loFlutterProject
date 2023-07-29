@@ -1,7 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:pwa_demo/extensions.dart';
-import 'package:pwa_demo/widgets/job_list.dart';
+import 'package:lo_news/extensions.dart';
+import 'package:lo_news/widgets/job_list.dart';
 import 'dart:html' as html;
 
 import '/app_provider.dart';

@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:pwa_demo/extensions.dart';
-import 'package:pwa_demo/main.dart';
+import 'package:lo_news/extensions.dart';
+import 'package:lo_news/main.dart';
 
 import 'job_model.dart';
 import 'widgets/detail_widgets.dart';

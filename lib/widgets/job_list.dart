@@ -1,7 +1,8 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:pwa_demo/extensions.dart';
-import 'package:pwa_demo/job_model.dart';
+import '../extensions.dart';
+import '../article.dart';
+import '../service/api_service.dart';
 
 import '../colors.dart';
 
@@ -10,15 +11,31 @@ class JobList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final jobs = context.provider.jobs;
-
-    return ListView.builder(
-      itemCount: jobs.length,
-      physics: const BouncingScrollPhysics(),
-      itemBuilder: (c, index) => JobCard(
-        model: jobs[index],
-      ),
-    );
+    return FutureBuilder<List<Article>?>(
+        future: ApiService().getArticles(), // Your API Call here
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            if (snapshot.data != null) {
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (c, index) => JobCard(
+                  model: snapshot.data![index],
+                ),
+              );
+            } else {
+              return const Text("Connection error");
+            }
+          } else if (snapshot.hasError) {
+            return const Text('Error');
+          } else {
+            return const SizedBox(
+              width: 20,
+              height: 30,
+              child: CircularProgressIndicator(),
+            );
+          }
+        });
   }
 }
 
@@ -28,7 +45,7 @@ class JobCard extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  final JobModel model;
+  final Article model;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +55,8 @@ class JobCard extends StatelessWidget {
       onTap: () {
         context.isLargeScreen
             ? context.provider.childBeamerKey.currentState?.routerDelegate
-                .beamToNamed('/${model.id}')
-            : context.beamToNamed('/${model.id}');
+                .beamToNamed('/${model.link}')
+            : context.beamToNamed('/${model.link}');
       },
       child: AnimatedBuilder(
           animation: context.isLargeScreen
@@ -106,7 +123,7 @@ class JobCard extends StatelessWidget {
             ?.currentBeamLocation.state as BeamState)
         .pathParameters;
 
-    return params['id'] == model.id.toString();
+    return params['link'] == model.link;
   }
 
   Widget _buildChip(

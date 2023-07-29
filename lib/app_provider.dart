@@ -1,7 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pwa_demo/job_model.dart';
+import 'package:lo_news/job_model.dart';
 
 import 'colors.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pwa_demo/colors.dart';
-import 'package:pwa_demo/extensions.dart';
-import 'package:pwa_demo/job_model.dart';
+import 'package:lo_news/colors.dart';
+import 'package:lo_news/extensions.dart';
+import 'package:lo_news/job_model.dart';
 
 class JobDetailWidget extends StatelessWidget {
   const JobDetailWidget({Key? key, required this.model}) : super(key: key);
