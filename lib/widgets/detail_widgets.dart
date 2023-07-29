@@ -31,10 +31,6 @@ class JobDetailWidget extends StatelessWidget {
               _CompanyInfoWidget(model: model),
               Padding(
                 padding: const EdgeInsets.all(24).copyWith(top: 35),
-                child: const Text(
-                  "Description",
-                  style: TextStyle(color: (Color.fromARGB(255, 255, 255, 255))),
-                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
