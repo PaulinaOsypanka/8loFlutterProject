@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lo_news/colors.dart';
 import 'package:lo_news/extensions.dart';
-import 'package:lo_news/job_model.dart';
+
+import '../article.dart';
 
 class JobDetailWidget extends StatelessWidget {
   const JobDetailWidget({Key? key, required this.model}) : super(key: key);
 
-  final JobModel model;
+  final Article model;
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -30,15 +31,15 @@ class JobDetailWidget extends StatelessWidget {
               _CompanyInfoWidget(model: model),
               Padding(
                 padding: const EdgeInsets.all(24).copyWith(top: 35),
-                child: const Text( 
+                child: const Text(
                   "Description",
-                  style:  TextStyle( color: ( Color.fromARGB(255, 255, 255, 255))),
+                  style: TextStyle(color: (Color.fromARGB(255, 255, 255, 255))),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
-                  model.description,
+                  model.content,
                   style: textTheme.bodyMedium,
                 ),
               )
@@ -56,7 +57,7 @@ class _CompanyInfoWidget extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  final JobModel model;
+  final Article model;
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +91,9 @@ class _CompanyInfoWidget extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(model.company.name),
-                      ...[dot, Text(model.company.location), dot],
-                      Text(model.postedDate),
+                      Text(model.title),
+                      ...[dot, Text(model.author), dot],
+                      Text(model.date),
                     ],
                   ),
                 ),

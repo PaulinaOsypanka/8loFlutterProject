@@ -5,78 +5,104 @@ import 'package:flutter/material.dart';
 import 'package:lo_news/extensions.dart';
 import 'package:lo_news/main.dart';
 
-import 'job_model.dart';
 import 'widgets/detail_widgets.dart';
+import 'article.dart';
 
 class HomeLocation extends BeamLocation<BeamState> {
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) {
-    JobModel? job;
+    Article? job;
 
-    try {
-      job = context.provider.jobs.firstWhere(
-          (element) => element.id.toString() == state.pathParameters['id']);
-    } catch (e) {
-      log(e.toString());
-    }
+    if (BuildContextExt.jobs != null) {
+      try {
+        job = BuildContextExt.jobs!.firstWhere(
+            (element) => element.link == '${state.uri.path.substring(1)}/');
+      } catch (e) {
+        log(e.toString());
+      }
 
-    return [
-      const BeamPage(
-        key: ValueKey('home'),
-        title: "Home",
-        name: '/',
-        child: MyHomePage(
-          currentIndex: 0,
-        ),
-      ),
-      if (!context.isLargeScreen && state.pathParameters.containsKey('id'))
-        BeamPage(
-          key: ValueKey('job-${job!.id}'),
-          title: "${job.company.name} - ${job.title}",
-          name: '/:id',
-          child: JobDetailWidget(
-            model: job,
+      return [
+        const BeamPage(
+          key: ValueKey('home'),
+          title: "Home",
+          name: '/',
+          child: MyHomePage(
+            currentIndex: 0,
           ),
         ),
-    ];
+        if (!context.isLargeScreen)
+          BeamPage(
+            key: ValueKey('job-${job!.link}'),
+            title: job.title,
+            name: '/:link',
+            child: JobDetailWidget(
+              model: job,
+            ),
+          ),
+      ];
+    } else {
+      return [
+        const BeamPage(
+          key: ValueKey('home'),
+          title: "Home",
+          name: '/',
+          child: MyHomePage(
+            currentIndex: 0,
+          ),
+        )
+      ];
+    }
   }
 
   @override
-  List<Pattern> get pathPatterns => ['/:id'];
+  List<Pattern> get pathPatterns => ['/:link'];
 }
 
 class InnerJobLocation extends BeamLocation<BeamState> {
   @override
   List<BeamPage> buildPages(BuildContext context, BeamState state) {
-    JobModel? job;
+    Article? job;
 
-    try {
-      job = context.provider.jobs.firstWhere(
-          (element) => element.id.toString() == state.pathParameters['id']);
-    } catch (e) {
-      job = context.provider.jobs.first;
-    }
+    if (BuildContextExt.jobs != null) {
+      try {
+        job = BuildContextExt.jobs!.firstWhere(
+            (element) => element.link == '${state.uri.path.substring(1)}/');
+      } catch (e) {
+        job = BuildContextExt.jobs!.first;
+      }
 
-    return [
-      if (state.pathParameters.containsKey('id'))
-        BeamPage(
-          key: ValueKey('job-${job.id}'),
-          title: "${job.company.name} - ${job.title}",
-          name: '/:id',
-          child: JobDetailWidget(
-            model: job,
+      return [
+        if (state.pathParameters.containsKey('link'))
+          BeamPage(
+            key: ValueKey('job-${job.link}'),
+            title: "job.title",
+            name: '/:id',
+            child: JobDetailWidget(
+              model: job,
+            ),
+          )
+        else
+          BeamPage(
+            key: ValueKey('job-${job.link}'),
+            title: job.title,
+            name: '/0',
+            child: JobDetailWidget(
+              model: job,
+            ),
+          ),
+      ];
+    } else {
+      return [
+        const BeamPage(
+          key: ValueKey('home'),
+          title: "Home",
+          name: '/',
+          child: MyHomePage(
+            currentIndex: 0,
           ),
         )
-      else
-        BeamPage(
-          key: ValueKey('job-${job.id}'),
-          title: "${job.company.name} - ${job.title}",
-          name: '/0',
-          child: JobDetailWidget(
-            model: job,
-          ),
-        ),
-    ];
+      ];
+    }
   }
 
   @override

@@ -16,6 +16,7 @@ class JobList extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data != null) {
+              BuildContextExt.jobs = snapshot.data;
               return ListView.builder(
                 itemCount: snapshot.data!.length,
                 physics: const BouncingScrollPhysics(),
