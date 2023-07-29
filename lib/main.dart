@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const CircleAvatar(
                     radius: 29,
-                    backgroundColor: const Color(0xFF121212),
+                    backgroundColor:  Color(0xFF121212),
                     foregroundImage: AssetImage('img/logo.png'),
                   ),
                 ))
@@ -162,14 +162,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 constraints.maxWidth * (context.isExpanded ? 0.5 : 0.6);
 
             return Container(
-              color: const Color.fromARGB(255, 24, 24, 24),
+              color: const Color.fromARGB(255, 18, 18, 18),
               margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(width: listviewMaxWidth, child: const JobList()),
                   Container(
-                    color: const Color(0xFF121212),
+                    color: const Color.fromARGB(255, 24, 24, 24),
                   child: SizedBox(
                     width: detailMaxWidth,
                     child: Beamer(

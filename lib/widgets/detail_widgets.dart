@@ -21,7 +21,7 @@ class JobDetailWidget extends StatelessWidget {
             ),
       body: SingleChildScrollView(
         child: Container(
-          color: const Color(0xFF121212),
+          color: const Color.fromARGB(255, 20, 20, 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,9 +38,9 @@ class JobDetailWidget extends StatelessWidget {
                   style: textTheme.bodyMedium,
                 ),
               ),
-                const Padding(
-                padding: EdgeInsets.symmetric(vertical: 1120),
-                ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 359),
+              ),
             ],
           ),
         ),
