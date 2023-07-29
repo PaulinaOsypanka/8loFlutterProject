@@ -17,13 +17,15 @@ class JobList extends StatelessWidget {
           if (snapshot.hasData) {
             if (snapshot.data != null) {
               BuildContextExt.jobs = snapshot.data;
-              return ListView.builder(
+              return Container(
+              color: const Color.fromARGB(255, 20, 20, 20),
+              child: ListView.builder(
                 itemCount: snapshot.data!.length,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (c, index) => JobCard(
                   model: snapshot.data![index],
                 ),
-              );
+              ),);
             } else {
               return const Text("Connection error");
             }

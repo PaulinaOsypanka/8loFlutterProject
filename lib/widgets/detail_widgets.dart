@@ -15,6 +15,9 @@ class JobDetailWidget extends StatelessWidget {
       appBar: context.isLargeScreen
           ? null
           : AppBar(
+              iconTheme: const IconThemeData(
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
               title: Text(
                 model.title,
               ),

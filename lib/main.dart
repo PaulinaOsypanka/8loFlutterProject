@@ -34,6 +34,7 @@ class _MyAppState extends State<MyApp> {
           title: 'Aktualności 8lo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
+              scaffoldBackgroundColor:const Color.fromARGB(255, 18, 18, 18),
               primarySwatch: MaterialColorGenerator.from( const Color.fromARGB(255, 15, 15, 15)),
               chipTheme: const ChipThemeData(
                   labelStyle: TextStyle(
