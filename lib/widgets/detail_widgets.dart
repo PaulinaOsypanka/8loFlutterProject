@@ -33,7 +33,7 @@ class JobDetailWidget extends StatelessWidget {
             children: [
               _CompanyInfoWidget(model: model),
               Padding(
-                padding: const EdgeInsets.all(24).copyWith(top: 35),
+                padding: const EdgeInsets.all(24).copyWith(top: 5),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -85,14 +85,13 @@ class _CompanyInfoWidget extends StatelessWidget {
               color: const Color.fromARGB(255, 29, 29, 29),
               borderRadius: BorderRadius.circular(7),
             ),
-            padding: const EdgeInsets.all(16),
-            margin: const EdgeInsets.only(top: 35),
+            padding: const EdgeInsets.all(10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 36),
+                const SizedBox(height: 16),
                 Text(
-                  "${model.title}\n",
+                  model.title,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -101,13 +100,9 @@ class _CompanyInfoWidget extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 32),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(model.author),
-                      dot,
-                      Text(model.date),
-                    ],
+                  child: Text(
+                    '${model.author} - ${model.date}',
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 const SizedBox(height: 16),
