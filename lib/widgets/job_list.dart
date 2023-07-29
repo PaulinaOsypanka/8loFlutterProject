@@ -102,7 +102,7 @@ class JobCard extends StatelessWidget {
                             Flexible(
                               child: Text(
                                 model.title,
-                                style: textTheme.headline6,
+                                style: textTheme.titleLarge,
                               ),
                             ),
                             const SizedBox(height: 4),

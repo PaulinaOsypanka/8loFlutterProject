@@ -51,18 +51,20 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               textTheme: const TextTheme(
-                headline6: TextStyle(
+                titleLarge: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
+                   color: Color.fromARGB(192, 255, 255, 255),
                 ),
-                bodyText1: TextStyle(
+                bodyLarge: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
+                   color: Color.fromARGB(213, 255, 255, 255),
                 ),
-                bodyText2: TextStyle(
+                bodyMedium: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: Color.fromARGB(213, 255, 255, 255),
-                  fontSize: 12,
+                  fontSize: 18,
                 ),
               )),
           routeInformationParser: BeamerParser(),
@@ -135,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const CircleAvatar(
                     radius: 29,
-                    backgroundColor: const Color(0xFF121212),
+                    backgroundColor:  Color(0xFF121212),
                     foregroundImage: AssetImage('img/logo.png'),
                   ),
                 ))
@@ -160,14 +162,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 constraints.maxWidth * (context.isExpanded ? 0.5 : 0.6);
 
             return Container(
-              color: const Color.fromARGB(255, 24, 24, 24),
+              color: const Color.fromARGB(255, 18, 18, 18),
               margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(width: listviewMaxWidth, child: const JobList()),
                   Container(
-                    color: const Color(0xFF121212),
+                    color: const Color.fromARGB(255, 24, 24, 24),
                   child: SizedBox(
                     width: detailMaxWidth,
                     child: Beamer(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lo_news/colors.dart';
 import 'package:lo_news/extensions.dart';
 
 import '../article.dart';
@@ -22,7 +21,7 @@ class JobDetailWidget extends StatelessWidget {
             ),
       body: SingleChildScrollView(
         child: Container(
-          color: const Color(0xFF121212),
+          color: const Color.fromARGB(255, 20, 20, 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,10 +30,6 @@ class JobDetailWidget extends StatelessWidget {
               _CompanyInfoWidget(model: model),
               Padding(
                 padding: const EdgeInsets.all(24).copyWith(top: 35),
-                child: const Text(
-                  "Description",
-                  style: TextStyle(color: (Color.fromARGB(255, 255, 255, 255))),
-                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -42,7 +37,10 @@ class JobDetailWidget extends StatelessWidget {
                   model.content,
                   style: textTheme.bodyMedium,
                 ),
-              )
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 359),
+              ),
             ],
           ),
         ),
