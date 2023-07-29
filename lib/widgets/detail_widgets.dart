@@ -38,6 +38,16 @@ class JobDetailWidget extends StatelessWidget {
                   style: textTheme.bodyMedium,
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  children: List.generate(model.images.length, (index) {
+                    return Image.network(
+                      model.images[index].link,
+                    );
+                  }),
+                ),
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 359),
               ),
