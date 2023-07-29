@@ -51,18 +51,20 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               textTheme: const TextTheme(
-                headline6: TextStyle(
+                titleLarge: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
+                   color: Color.fromARGB(192, 255, 255, 255),
                 ),
-                bodyText1: TextStyle(
+                bodyLarge: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
+                   color: Color.fromARGB(213, 255, 255, 255),
                 ),
-                bodyText2: TextStyle(
+                bodyMedium: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: Color.fromARGB(213, 255, 255, 255),
-                  fontSize: 12,
+                  fontSize: 18,
                 ),
               )),
           routeInformationParser: BeamerParser(),
