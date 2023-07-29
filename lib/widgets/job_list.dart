@@ -18,14 +18,15 @@ class JobList extends StatelessWidget {
             if (snapshot.data != null) {
               BuildContextExt.jobs = snapshot.data;
               return Container(
-              color: const Color.fromARGB(255, 20, 20, 20),
-              child: ListView.builder(
-                itemCount: snapshot.data!.length,
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (c, index) => JobCard(
-                  model: snapshot.data![index],
+                color: const Color.fromARGB(255, 20, 20, 20),
+                child: ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: (c, index) => JobCard(
+                    model: snapshot.data![index],
+                  ),
                 ),
-              ),);
+              );
             } else {
               return const Text("Connection error");
             }
@@ -72,12 +73,12 @@ class JobCard extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 29, 29, 29),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
-                    offset: const Offset(-3, 2),
+                    offset: Offset(-3, 2),
                     spreadRadius: 1,
                     blurRadius: 3,
-                    color: const Color.fromARGB(255, 0, 0, 0)!,
+                    color: Color.fromARGB(255, 0, 0, 0),
                   )
                 ],
                 borderRadius: BorderRadius.circular(7),
@@ -105,30 +106,4 @@ class JobCard extends StatelessWidget {
 
     return params['id'] == model.id.toString();
   }
-
-  Widget _buildChip(
-    BuildContext context,
-    String text, {
-    Color? color,
-    double? horizontalPad,
-    FontWeight? fontWeight,
-  }) =>
-      FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Container(
-          decoration: BoxDecoration(
-            color: color ?? Colors.grey[100],
-            borderRadius: BorderRadius.circular(15),
-          ),
-          padding:
-              EdgeInsets.symmetric(vertical: 4, horizontal: horizontalPad ?? 8),
-          alignment: Alignment.center,
-          child: Text(
-            text,
-            style: Theme.of(context).chipTheme.labelStyle!.copyWith(
-                  fontWeight: fontWeight,
-                ),
-          ),
-        ),
-      );
 }

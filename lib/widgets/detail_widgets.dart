@@ -73,9 +73,6 @@ class _CompanyInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const dot =
-        Expanded(child: CircleAvatar(radius: 2, backgroundColor: Colors.grey));
-
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Stack(
