@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lo_news/colors.dart';
 import 'package:lo_news/extensions.dart';
-import 'package:lo_news/job_model.dart';
+
+import '../article.dart';
 
 class JobDetailWidget extends StatelessWidget {
   const JobDetailWidget({Key? key, required this.model}) : super(key: key);
 
-  final JobModel model;
+  final Article model;
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -38,7 +39,7 @@ class JobDetailWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
-                  model.description,
+                  model.content,
                   style: textTheme.bodyText2,
                 ),
               )
@@ -56,7 +57,7 @@ class _CompanyInfoWidget extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  final JobModel model;
+  final Article model;
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +91,9 @@ class _CompanyInfoWidget extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(model.company.name),
-                      ...[dot, Text(model.company.location), dot],
-                      Text(model.postedDate),
+                      Text(model.title),
+                      ...[dot, Text(model.author), dot],
+                      Text(model.date),
                     ],
                   ),
                 ),
