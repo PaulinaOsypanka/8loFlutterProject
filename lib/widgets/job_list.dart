@@ -84,34 +84,10 @@ class JobCard extends StatelessWidget {
                       _isSelected(context) ? lightYellow : Colors.transparent,
                 ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Flexible(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const SizedBox(width: 16),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                model.title,
-                                style: textTheme.titleLarge,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              child: Text(
+                model.title,
+                style: textTheme.titleLarge,
+                overflow: TextOverflow.ellipsis,
               ),
             );
           }),

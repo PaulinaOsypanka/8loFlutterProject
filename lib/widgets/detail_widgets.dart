@@ -17,6 +17,7 @@ class JobDetailWidget extends StatelessWidget {
           : AppBar(
               title: Text(
                 model.title,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
       body: SingleChildScrollView(
@@ -89,6 +90,7 @@ class _CompanyInfoWidget extends StatelessWidget {
                 const SizedBox(height: 36),
                 Text(
                   "${model.title}\n",
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -99,8 +101,8 @@ class _CompanyInfoWidget extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(model.title),
-                      ...[dot, Text(model.author), dot],
+                      Text(model.author),
+                      dot,
                       Text(model.date),
                     ],
                   ),
