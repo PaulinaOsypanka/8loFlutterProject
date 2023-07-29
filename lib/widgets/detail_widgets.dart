@@ -30,16 +30,16 @@ class JobDetailWidget extends StatelessWidget {
               _CompanyInfoWidget(model: model),
               Padding(
                 padding: const EdgeInsets.all(24).copyWith(top: 35),
-                child: Text(
+                child: const Text( 
                   "Description",
-                  style: textTheme.headline6,
+                  style:  TextStyle( color: ( Color.fromARGB(255, 255, 255, 255))),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
                   model.description,
-                  style: textTheme.bodyText2,
+                  style: textTheme.bodyMedium,
                 ),
               )
             ],
@@ -69,7 +69,7 @@ class _CompanyInfoWidget extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: grayColor,
+              color: const Color.fromARGB(255, 29, 29, 29),
               borderRadius: BorderRadius.circular(7),
             ),
             padding: const EdgeInsets.all(16),

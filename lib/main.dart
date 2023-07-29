@@ -38,6 +38,7 @@ class _MyAppState extends State<MyApp> {
               chipTheme: const ChipThemeData(
                   labelStyle: TextStyle(
                 fontSize: 11,
+                color: Color.fromARGB(255, 255, 255, 255)
               )),
               appBarTheme: const AppBarTheme(
                 backgroundColor:  Color.fromARGB(255, 15, 15, 15),
@@ -45,7 +46,7 @@ class _MyAppState extends State<MyApp> {
                 iconTheme: IconThemeData(color: Colors.black),
                 titleTextStyle: TextStyle(
                   fontSize: 18,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 255, 255, 255),
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -60,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                 ),
                 bodyText2: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: Color(0xff5656565),
+                  color: Color.fromARGB(213, 255, 255, 255),
                   fontSize: 12,
                 ),
               )),
@@ -119,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: const Text(
             "Aktualności 8lo",
             style: TextStyle(
-                color: lightGreen,
+                color: lightYellow,
                 fontSize: 24,
                 letterSpacing: 5,
                 fontWeight: FontWeight.bold),
@@ -159,18 +160,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 constraints.maxWidth * (context.isExpanded ? 0.5 : 0.6);
 
             return Container(
-              color: Color.fromARGB(255, 24, 24, 24),
+              color: const Color.fromARGB(255, 24, 24, 24),
               margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(width: listviewMaxWidth, child: const JobList()),
-                  SizedBox(
+                  Container(
+                    color: const Color(0xFF121212),
+                  child: SizedBox(
                     width: detailMaxWidth,
                     child: Beamer(
                       key: context.provider.childBeamerKey,
                       routerDelegate: innerRouterDelegate,
                     ),
+                  ),
                   ),
                 ],
               ),

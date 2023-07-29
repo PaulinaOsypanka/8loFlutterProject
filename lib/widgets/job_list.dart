@@ -68,7 +68,7 @@ class JobCard extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 29, 29, 29),
+                color: const Color.fromARGB(255, 29, 29, 29),
                 boxShadow: [
                   BoxShadow(
                     offset: const Offset(-3, 2),
@@ -79,7 +79,7 @@ class JobCard extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.circular(7),
                 border: Border.all(
-                  color: _isSelected(context) ? lightGreen : Colors.transparent,
+                  color: _isSelected(context) ? lightYellow : Colors.transparent,
                 ),
               ),
               child: Column(
