@@ -33,11 +33,16 @@ class JobList extends StatelessWidget {
           } else if (snapshot.hasError) {
             return const Text('Error');
           } else {
-            return const SizedBox(
-              width: 20,
-              height: 30,
-              child: CircularProgressIndicator(),
-            );
+            return Container(
+                alignment: Alignment.center,
+                child: const SizedBox(
+                  width: 100,
+                  height: 100,
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                    backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                  ),
+                ));
           }
         });
   }

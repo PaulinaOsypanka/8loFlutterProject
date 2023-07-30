@@ -33,14 +33,14 @@ class JobDetailWidget extends StatelessWidget {
             children: [
               _CompanyInfoWidget(model: model),
               Padding(
-                padding: const EdgeInsets.all(24).copyWith(top: 5),
-              ),
-              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
                   model.content,
                   style: textTheme.bodyMedium,
                 ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(10),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -78,6 +78,7 @@ class _CompanyInfoWidget extends StatelessWidget {
       child: Stack(
         children: [
           Container(
+            width: double.infinity,
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 29, 29, 29),
               borderRadius: BorderRadius.circular(7),
@@ -86,23 +87,33 @@ class _CompanyInfoWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 16),
-                Text(
-                  model.title,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                const SizedBox(height: 6),
+                Column(
+                  children: [
+                    Text(
+                      model.title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  child: Text(
+                    model.author,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 32),
                   child: Text(
-                    '${model.author} - ${model.date}',
+                    model.date,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 6),
               ],
             ),
           ),
