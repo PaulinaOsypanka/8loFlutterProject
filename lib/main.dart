@@ -132,15 +132,15 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: [
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: GestureDetector(
-                  onTap: () {
-                    html.window
-                        .open('https://linktr.ee/su8lokrakow', 'linktree');
-                  },
-                  child: const CircleAvatar(
-                    radius: 29,
-                    backgroundColor: Color(0x00000000),
-                    foregroundImage: AssetImage('img/logo.png'),
+                child: CircleAvatar(
+                  radius: 29,
+                  backgroundColor: const Color(0x00000000),
+                  foregroundImage: const AssetImage('img/logo.png'),
+                  child: GestureDetector(
+                    onTap: () {
+                      html.window
+                          .open('https://linktr.ee/su8lokrakow', 'linktree');
+                    },
                   ),
                 ))
           ],
