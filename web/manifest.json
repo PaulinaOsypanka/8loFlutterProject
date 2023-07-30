@@ -1,14 +1,13 @@
 {
-    "name": "8lo aktualnosci",
-    "short_name": "8lo_akt",
+    "name": "8lo aktualności",
+    "short_name": "8lo aktualności",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
+    "background_color": "#121212",
+    "theme_color": "#121212",
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
-    
     "icons": [
         {
             "src": "icons/Icon-192.png",
