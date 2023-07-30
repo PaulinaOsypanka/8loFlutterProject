@@ -34,15 +34,14 @@ class _MyAppState extends State<MyApp> {
           title: 'Aktualności 8lo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-              scaffoldBackgroundColor:const Color.fromARGB(255, 18, 18, 18),
-              primarySwatch: MaterialColorGenerator.from( const Color.fromARGB(255, 15, 15, 15)),
+              scaffoldBackgroundColor: const Color.fromARGB(255, 18, 18, 18),
+              primarySwatch: MaterialColorGenerator.from(
+                  const Color.fromARGB(255, 15, 15, 15)),
               chipTheme: const ChipThemeData(
                   labelStyle: TextStyle(
-                fontSize: 11,
-                color: Color.fromARGB(255, 255, 255, 255)
-              )),
+                      fontSize: 11, color: Color.fromARGB(255, 255, 255, 255))),
               appBarTheme: const AppBarTheme(
-                backgroundColor:  Color.fromARGB(255, 15, 15, 15),
+                backgroundColor: Color.fromARGB(255, 15, 15, 15),
                 elevation: 1.0,
                 iconTheme: IconThemeData(color: Colors.black),
                 titleTextStyle: TextStyle(
@@ -55,12 +54,12 @@ class _MyAppState extends State<MyApp> {
                 titleLarge: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                   color: Color.fromARGB(192, 255, 255, 255),
+                  color: Color.fromARGB(192, 255, 255, 255),
                 ),
                 bodyLarge: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
-                   color: Color.fromARGB(213, 255, 255, 255),
+                  color: Color.fromARGB(213, 255, 255, 255),
                 ),
                 bodyMedium: TextStyle(
                   fontWeight: FontWeight.w400,
@@ -77,7 +76,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-class MaterialColorGenerator{
+
+class MaterialColorGenerator {
   static MaterialColor from(Color color) {
     return MaterialColor(color.value, <int, Color>{
       50: color.withOpacity(0.1),
@@ -93,6 +93,7 @@ class MaterialColorGenerator{
     });
   }
 }
+
 /// Design inspired by this deisgn https://dribbble.com/shots/17092342-Job-Finder-App
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -138,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const CircleAvatar(
                     radius: 29,
-                    backgroundColor:  Color(0xFF121212),
+                    backgroundColor: Color(0x00000000),
                     foregroundImage: AssetImage('img/logo.png'),
                   ),
                 ))
@@ -171,13 +172,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(width: listviewMaxWidth, child: const JobList()),
                   Container(
                     color: const Color.fromARGB(255, 24, 24, 24),
-                  child: SizedBox(
-                    width: detailMaxWidth,
-                    child: Beamer(
-                      key: context.provider.childBeamerKey,
-                      routerDelegate: innerRouterDelegate,
+                    child: SizedBox(
+                      width: detailMaxWidth,
+                      child: Beamer(
+                        key: context.provider.childBeamerKey,
+                        routerDelegate: innerRouterDelegate,
+                      ),
                     ),
-                  ),
                   ),
                 ],
               ),
