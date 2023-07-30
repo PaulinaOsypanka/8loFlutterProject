@@ -133,16 +133,18 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: CircleAvatar(
-                  radius: 29,
+                  radius: 22,
                   backgroundColor: const Color(0x00000000),
-                  foregroundImage: const AssetImage('img/logo.png'),
+                  foregroundImage: const NetworkImage(
+                      'https://ugc.production.linktr.ee/7Qv9UNw5TGaKySDCRjrr_KlLss0HzhZRMAZSZ',
+                      scale: 0.7),
                   child: GestureDetector(
                     onTap: () {
                       html.window
                           .open('https://linktr.ee/su8lokrakow', 'linktree');
                     },
                   ),
-                ))
+                )),
           ],
           centerTitle: false,
           backgroundColor: const Color(0xFF121212),
